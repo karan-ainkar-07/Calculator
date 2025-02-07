@@ -1,2 +1,2 @@
-# Mini-Projects
-7 mini projects in JS
+# Mini-Project
+1st Mini Project in JS
