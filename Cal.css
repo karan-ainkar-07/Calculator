@@ -1,0 +1,150 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+    margin: 0;
+}
+
+/* Calculator Container */
+#Cal {
+    width: 90%;
+    max-width: 380px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    padding: 15px;
+    text-align: center;
+}
+
+/* Display */
+#display {
+    height: 80px;
+    background: #222;
+    color: #fff;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+#content
+{
+    color:white;
+    font-size: 35px;
+}
+/* Button Container */
+#btn-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr); /* Ensuring exactly 5 rows */
+    gap: 8px;
+}
+
+/* Buttons */
+.btn {
+    background: #e0e0e0;
+    border: none;
+    padding: 12px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 3px 3px rgba(73, 73, 73, 0.6);
+}
+.btn:hover {
+    background: #d1d1d1;
+}
+.btn-img{
+    display:flex;
+    flex-direction: column;
+    padding: 0px;
+}
+p{
+    margin: 10px;
+}
+:is(.btn:nth-child(4),.btn:nth-child(8),.btn:nth-child(12),.btn:nth-child(16))
+{
+    background-color: rgb(176, 176, 176);
+    color: black;
+}
+.btn:nth-child(20)
+{
+    background-color: rgb(13, 215, 13);
+    color: white;
+}
+.btn:nth-child(19)
+{
+    background-color: red;
+    color: white;
+}
+.btn:nth-child(1)
+{
+    background-color: rgb(247, 167, 106);
+    font-weight: bold;
+}
+.btn:nth-child(2)
+{
+    background-color: burlywood;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    #Cal {
+        width: 95%;
+        max-width: 300px;
+    }
+
+    #display {
+        font-size: 1.2rem;
+        padding: 10px;
+    }
+
+    .btn {
+        padding: 12px;
+        font-size: 1rem;
+    }
+
+    .btn-img img {
+        width: 18px;
+        height: 18px;
+    }
+    p
+    {
+        margin: 4px;
+    }
+}
+
+@media (max-width: 360px) {
+    #Cal {
+        max-width: 280px;
+    }
+
+    #display {
+        font-size: 1rem;
+        padding: 8px;
+    }
+
+    .btn {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn-img img {
+        width: 16px;
+        height: 16px;
+    }
+    p
+    {
+        margin: 2px;
+    }
+}
