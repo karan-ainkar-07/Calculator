@@ -4,14 +4,24 @@ let shift=false;
 btn_container.addEventListener('click',(e)=>
 {
     let btn_class=e.target.classList;
-    if(!btn_class.contains('btn-img'))
+    if(display_content.length<=16)
     {
-        if(e.target.tagName==="BUTTON")
-            check_content(e.target.innerText)
+        if(!btn_class.contains('btn-img'))
+        {
+            if(e.target.tagName==="BUTTON")
+                check_content(e.target.innerText)
+        }
+        else
+        {
+            operator(e.target);
+        }
     }
     else
     {
-        operator(e.target);
+        if(e.target.tagName==="BUTTON" && (e.target.innerText==='AC' || e.target.innerText==='Del'))
+        {
+            check_content(e.target.innerText);
+        }
     }
 })
 let content=document.querySelector('#content');
@@ -44,11 +54,11 @@ function Backspace()
 function Shift_Up()
 {
     shift=!shift;
+    color_shift(shift);
 }
 function Submit()
 {
-    let answer=eval(display_content);
-    display_content=answer;
+    display_content=eval(display_content)
     content.innerHTML=display_content
 }
 function concat_string(Str)
@@ -62,10 +72,23 @@ function operator(element)
     {
         display_content+=element.children[0].innerText;
         shift=!shift;
+        color_shift(shift);
     }
     else
     {
         display_content+=element.children[1].innerText;
     }
     content.innerText=display_content;
+}
+function color_shift()
+{
+    let shiftElement=document.querySelector('#shift');
+    if(shift)
+    {
+        shiftElement.style.color = 'green';
+    }
+    else
+    {
+        shiftElement.style.color="white";
+    }
 }
