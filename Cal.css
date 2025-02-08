@@ -38,6 +38,7 @@ body {
 {
     color:white;
     font-size: 35px;
+    margin-top: 20px;
 }
 /* Button Container */
 #btn-container {
@@ -72,10 +73,13 @@ body {
 p{
     margin: 10px;
 }
-:is(.btn:nth-child(4),.btn:nth-child(8),.btn:nth-child(12),.btn:nth-child(16))
+.operator-btn
 {
     background-color: rgb(176, 176, 176);
     color: black;
+}
+.operator-btn:hover{
+    background-color: rgb(167, 167, 167);
 }
 .btn:nth-child(20)
 {
@@ -91,6 +95,8 @@ p{
 {
     background-color: rgb(247, 167, 106);
     font-weight: bold;
+    color: white;
+    text-shadow: 1.5px 1.5px rgba(0, 0, 0, 0.53);
 }
 .btn:nth-child(2)
 {
